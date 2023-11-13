@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "ShipRoom",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Ship/Rooms/Room.gd"
+}, {
+"base": "Reference",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://TacticalSpaceCombat/Utils.gd"
+} ]
+_global_script_class_icons={
+"ShipRoom": "",
+"Utils": ""
+}
+
 [application]
 
 config/name="2D Tactical Space Combat - Start Project"
@@ -17,6 +33,13 @@ config/icon="res://icon.png"
 
 Global="*res://TacticalSpaceCombat/Global.gd"
 
+[beautifier]
+
+theme_script="res://addons/godot_beautifier/themes/Nana7mi/theme.gd"
+default_settings={
+"rendering/environment/default_clear_color": Color( 0.152941, 0.152941, 0.211765, 1 )
+}
+
 [display]
 
 window/size/width=1920
@@ -25,11 +48,12 @@ window/size/fullscreen=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/ColorPickerPresets/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/ColorPickerPresets/plugin.cfg", "res://addons/godot_beautifier/plugin.cfg" )
 
 [global]
 
 "Layer Names"=false
+Plugins=true
 
 [input]
 
@@ -41,6 +65,31 @@ left_click={
 right_click={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+menu_inventory={
+"deadzone": 0.2,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":73,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+inventory_less={
+"deadzone": 0.01,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777240,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+inventory_more={
+"deadzone": 0.01,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+inventory_filter={
+"deadzone": 0.01,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 
@@ -59,5 +108,5 @@ right_click={
 
 [rendering]
 
-environment/default_clear_color=Color( 0.152941, 0.152941, 0.211765, 1 )
+environment/default_clear_color=Color( 0.156863, 0.156863, 0.176471, 1 )
 environment/default_environment="res://default_env.tres"
