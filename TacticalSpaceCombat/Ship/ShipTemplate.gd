@@ -3,6 +3,7 @@ extends Node2D
 
 onready var tile_map: TileMap = $TileMap
 onready var rooms: Node2D = $Rooms
+onready var units: Node2D = $Units
 
 
 func _ready() -> void:
